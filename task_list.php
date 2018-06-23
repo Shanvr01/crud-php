@@ -7,10 +7,8 @@ $pageTitle = "Task List | Time Tracker";
 include 'inc/header.php';
 ?>
 <div class="section catalog random">
-
     <div class="col-container page-container">
         <div class="col col-70-md col-60-lg col-center">
-
             <h1 class="actions-header">Task List</h1>
             <div class="actions-item">
                 <a class="actions-link" href="task.php">
@@ -21,10 +19,12 @@ include 'inc/header.php';
             </div>
 
             <div class="form-container">
-              <ul class="items">
-              </ul>
+                <ul class="items">
+                    <?php foreach (get_task_list() as $item) : ?>
+                        <?= '<li>' . $item['title'] . '</li>' ?>
+                    <?php endforeach; ?>
+                </ul>
             </div>
-
         </div>
     </div>
 </div>

@@ -22,7 +22,9 @@ include 'inc/header.php';
 
             <div class="form-container">
                 <ul class="items">
-
+                    <?php foreach (get_project_list() as $item) : ?>
+                        <?= '<li>' . $item['title'] . '</li>' ?>
+                    <?php endforeach; ?>
                 </ul>
             </div>
         </div>
